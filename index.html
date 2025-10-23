@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Login Page</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/weblogo.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/weblogo.png?v=2">
+<link rel="shortcut icon" href="/images/weblogo.png?v=2">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  
+</head>
+
+<body class="bg-[#faf9f7] min-h-screen flex items-center justify-center p-4">
+  <div class="max-w-4xl w-full bg-white rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col md:flex-row overflow-hidden">
+    <!-- Left side with gradient background -->
+    <div class="md:w-1/2 flex flex-col justify-center px-10 py-16 bg-gradient-to-tr from-[#7c4dff] via-[#7c4dff] to-[#f9cda6]">
+      <h1 class="text-white font-extrabold text-4xl leading-tight max-w-xs">
+        Welcome<br>Back!
+      </h1>
+    </div>
+
+    <!-- Right side with form -->
+    <div class="md:w-1/2 p-10">
+      <h2 class="text-gray-900 font-bold text-xl mb-2">Login</h2>
+      <p class="text-gray-400 text-sm mb-8">
+        Welcome back! Please login to your account.
+      </p>
+
+      <form class="space-y-6" method="POST" action="login.php">
+        <div>
+          <label class="block text-gray-500 text-xs mb-1" for="username">Email</label>
+          <input name="email" id="username" type="email" required
+                 class="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7c4dff]"/>
+        </div>
+       <div class="relative">
+  <label class="block text-gray-500 text-xs mb-1" for="password">Password</label>
+  <input name="password" id="password" type="password" required
+         class="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7c4dff]"/>
+  <!-- Eye toggle button -->
+  <span id="togglePassword" class="absolute right-1 top-2 cursor-pointer text-gray-500 text-lg">👁️‍🗨️</span>
+</div>
+        <div class="flex items-center justify-between text-xs text-gray-400 mb-6">
+          <label class="flex items-center space-x-2 cursor-pointer select-none">
+            <input checked class="w-4 h-4 rounded border border-gray-300 text-[#7c4dff] focus:ring-[#7c4dff]" type="checkbox"/>
+            <span class="text-gray-600 text-[10px] font-semibold">Remember Me</span>
+          </label>
+          <button class="text-gray-300 hover:text-[#7c4dff] font-semibold" type="button">Forgot Password?</button>
+        </div>
+        
+        <button type="submit"
+                class="w-full bg-[#7c4dff] text-white text-sm font-semibold py-3 rounded hover:bg-[#6b3de6] transition-colors">
+          Login
+        </button>
+      </form>
+<p class="text-gray-400 text-xs mt-6 flex items-center gap-2">
+  <!-- New Small Button -->
+  <a href="https://Department.aztraderss.com" target="_blank"
+     class="bg-[#7c4dff] hover:bg-[#6b3de6] text-white text-[10px] font-semibold px-3 py-1 rounded transition">
+    Go to Departments
+  </a>
+  
+  <!-- Existing Signup Link -->
+  New User?
+  <a href="/signup.html" class="text-[#7c4dff] font-semibold hover:underline">Signup</a>
+</p>
+    </div>
+  </div>
+  <script>
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function () {
+    if (password.type === 'password') {
+        password.type = 'text';
+        togglePassword.textContent = '👁️'; // open eye
+    } else {
+        password.type = 'password';
+        togglePassword.textContent = '👁️‍🗨️'; // closed eye
+    }
+});
+</script>
+</body>
+
+</html>
